@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tour Rate Quote</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#3699FF',
+        secondary: '#E4E6EF',
+        dark: '#181C32',
+        glow: 'rgba(54, 153, 255, 0.1)'
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+        'slide-up': 'slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+        'pulse-glow': 'pulseGlow 2s infinite'
+      },
+      keyframes: {
+        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+        slideUp: { '0%': { transform: 'translateY(30px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+        pulseGlow: { '0%, 100%': { 'box-shadow': '0 0 0 0 rgba(54, 153, 255, 0.3)' }, '50%': { 'box-shadow': '0 0 20px 10px rgba(54, 153, 255, 0)' } }
+      }
+    }
+  }
+};
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+body { font-family: 'Inter', sans-serif; }
+.hover-scale { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.hover-scale:hover { transform: scale(1.02); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+.glow-border { position: relative; }
+.glow-border::after { content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; z-index: -1; background: linear-gradient(45deg, rgba(54, 153, 255, 0.8), rgba(54, 153, 255, 0.2)); border-radius: 12px; opacity: 0; transition: opacity 0.3s; }
+.glow-border:hover::after { opacity: 1; }
+</style>
+</head>
+<body class="bg-gray-50">
+<header class="bg-white shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] py-6 animate-fade-in">
+  <div class="container mx-auto px-6">
+    <h1 class="text-3xl font-bold text-dark">Tour Rate Quote</h1>
+    <div class="flex flex-wrap gap-8 mt-4">
+      <div class="glow-border px-4 py-2 rounded-lg bg-white">
+        <p class="text-gray-500">Dates</p>
+        <p class="font-medium text-lg">May 10 - May 17, 2025</p>
+      </div>
+      <div class="glow-border px-4 py-2 rounded-lg bg-white">
+        <p class="text-gray-500">Group Size</p>
+        <p class="font-medium text-lg">4 Adults</p>
+      </div>
+      <div class="glow-border px-4 py-2 rounded-lg bg-white">
+        <p class="text-gray-500">Location</p>
+        <p class="font-medium text-lg">Bali, Indonesia</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container mx-auto px-6 py-8">
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="bg-white rounded-xl shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] p-8 hover-scale animate-slide-up">
+      <h3 class="text-xl font-bold text-primary mb-3">Basic Package</h3>
+      <p class="text-gray-600 mb-6">Standard accommodations & guided tours</p>
+      <div class="border-t border-gray-200 pt-6">
+        <p class="text-gray-500">Base Price</p>
+        <p class="text-2xl font-bold mt-1">$1,200 <span class="text-sm text-gray-400">/person</span></p>
+      </div>
+      <div class="border-t border-gray-200 pt-6 mt-6">
+        <p class="text-gray-500">Margin</p>
+        <p class="text-xl font-bold text-green-500 mt-1">+$300</p>
+      </div>
+    </div>
+    <div class="bg-white rounded-xl shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] p-8 hover-scale animate-slide-up" style="animation-delay: 0.1s">
+      <h3 class="text-xl font-bold text-primary mb-3">Premium Package</h3>
+      <p class="text-gray-600 mb-6">Luxury stays & private tours</p>
+      <div class="border-t border-gray-200 pt-6">
+        <p class="text-gray-500">Base Price</p>
+        <p class="text-2xl font-bold mt-1">$2,500 <span class="text-sm text-gray-400">/person</span></p>
+      </div>
+      <div class="border-t border-gray-200 pt-6 mt-6">
+        <p class="text-gray-500">Margin</p>
+        <p class="text-xl font-bold text-green-500 mt-1">+$600</p>
+      </div>
+    </div>
+    <div class="bg-white rounded-xl shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] p-8 hover-scale animate-slide-up" style="animation-delay: 0.2s">
+      <h3 class="text-xl font-bold text-primary mb-3">VIP Package</h3>
+      <p class="text-gray-600 mb-6">Exclusive villas & personalized itinerary</p>
+      <div class="border-t border-gray-200 pt-6">
+        <p class="text-gray-500">Base Price</p>
+        <p class="text-2xl font-bold mt-1">$4,800 <span class="text-sm text-gray-400">/person</span></p>
+      </div>
+      <div class="border-t border-gray-200 pt-6 mt-6">
+        <p class="text-gray-500">Margin</p>
+        <p class="text-xl font-bold text-green-500 mt-1">+$1,200</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-xl shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] p-8 mt-12 animate-fade-in">
+    <h3 class="text-2xl font-bold text-dark mb-6">Total Estimate</h3>
+    <div class="space-y-4">
+      <div class="flex justify-between">
+        <p class="text-gray-600">Subtotal (4 adults)</p>
+        <p class="font-medium">$9,600</p>
+      </div>
+      <div class="flex justify-between border-t border-gray-200 pt-4">
+        <p class="text-gray-600">Service Fee</p>
+        <p class="font-medium">$480</p>
+      </div>
+      <div class="flex justify-between border-t border-gray-200 pt-4">
+        <p class="text-gray-600">Taxes</p>
+        <p class="font-medium">$720</p>
+      </div>
+      <div class="flex justify-between border-t border-gray-200 pt-4 font-bold text-xl text-primary">
+        <p>Total</p>
+        <p>$10,800</p>
+      </div>
+    </div>
+    <button class="w-full mt-8 bg-primary hover:bg-[#2d8bf0] text-white py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] animate-pulse-glow">
+      Confirm Booking
+    </button>
+  </div>
+</main>
+
+<footer class="bg-gray-100 py-8 mt-16">
+  <div class="container mx-auto px-6 text-center text-gray-500">
+    <p>© 2025 Tour Management Platform. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
